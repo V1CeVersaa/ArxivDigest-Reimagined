@@ -58,8 +58,11 @@ class AsyncLLMClient:
             max_retries=max_retries,
         )
 
-        # Wrap with instructor for structured output
-        self.instructor_client = instructor.from_openai(self.client)
+        # Wrap with instructor for structured output (force JSON mode to avoid tool-call conflicts)
+        self.instructor_client = instructor.from_openai(
+            self.client,
+            mode=instructor.Mode.JSON,
+        )
 
         # Semaphore for limiting concurrent requests
         self.semaphore = asyncio.Semaphore(max_concurrent)

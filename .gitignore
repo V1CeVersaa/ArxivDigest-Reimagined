@@ -169,3 +169,7 @@ backend/config.yaml
 
 # Generated digest file
 frontend/public/digest.json
+
+# serena files
+.serena/
+.vercel
