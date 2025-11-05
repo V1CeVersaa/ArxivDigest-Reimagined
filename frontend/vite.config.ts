@@ -7,7 +7,7 @@ import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: process.env.BASE_URL || (process.env.GITHUB_ACTIONS ? "/ArxivDigest-Reimagined/" : "/"),
+    base: "/",
     plugins: [vue(), vueJsx(), vueDevTools()],
     resolve: {
         alias: {
